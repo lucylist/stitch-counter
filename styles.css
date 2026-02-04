@@ -10,45 +10,49 @@ body {
     background: #000;
     color: #fff;
     min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     align-items: center;
     justify-content: center;
     user-select: none;
     -webkit-user-select: none;
+    padding: 10%;
 }
 
 .container {
     width: 100%;
-    max-width: 170px;
-    padding: 6px;
-    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3vmin;
 }
 
 .counters {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    margin-bottom: 6px;
+    gap: 4vmin;
 }
 
 .counter-group {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
+    gap: 2vmin;
 }
 
 /* Large touch targets for digits */
 .digit {
-    font-size: 36px;
+    font-size: 18vmin;
     font-weight: 600;
-    width: 65px;
-    height: 60px;
+    width: 32vmin;
+    height: 30vmin;
     display: flex;
     align-items: center;
     justify-content: center;
     background: #333333;
-    border-radius: 12px;
+    border-radius: 4vmin;
     color: #fff;
     cursor: pointer;
     transition: transform 0.1s, opacity 0.1s;
@@ -81,10 +85,10 @@ body {
 
 /* Secondary minus buttons - subtle with stroke */
 .btn.down {
-    width: 65px;
-    height: 24px;
-    font-size: 16px;
-    border-radius: 6px;
+    width: 32vmin;
+    height: 12vmin;
+    font-size: 8vmin;
+    border-radius: 3vmin;
     color: #8e8e93;
     background: #1c1c1e;
     border: 1px solid #3a3a3c;
@@ -107,85 +111,15 @@ body {
 /* Reset button - small and subtle */
 .btn.reset-all {
     width: auto;
-    padding: 0 14px;
-    height: 22px;
-    font-size: 11px;
+    padding: 0 6vmin;
+    height: 10vmin;
+    font-size: 5vmin;
     background: #1c1c1e;
     color: #8e8e93;
     border: 1px solid #3a3a3c;
-    border-radius: 6px;
+    border-radius: 2.5vmin;
 }
 
 .btn.reset-all:active {
     background: #2c2c2e;
-}
-
-/* Apple Watch sizing (40mm-45mm models: ~162-198px wide) */
-@media (max-width: 220px) {
-    .container {
-        padding: 4px;
-        max-width: 170px;
-    }
-    
-    .counters {
-        gap: 8px;
-        margin-bottom: 5px;
-    }
-    
-    .counter-group {
-        gap: 3px;
-    }
-    
-    .digit {
-        font-size: 32px;
-        width: 60px;
-        height: 56px;
-        border-radius: 10px;
-    }
-    
-    .btn.down {
-        width: 60px;
-        height: 24px;
-        font-size: 14px;
-    }
-    
-    .btn.reset-all {
-        height: 22px;
-        font-size: 11px;
-        padding: 0 12px;
-    }
-}
-
-/* Smallest Apple Watch (40mm: ~162px wide) */
-@media (max-width: 170px) {
-    .container {
-        padding: 2px;
-        max-width: 156px;
-    }
-    
-    .counters {
-        gap: 4px;
-        margin-bottom: 4px;
-    }
-    
-    .digit {
-        font-size: 28px;
-        width: 54px;
-        height: 50px;
-        border-radius: 8px;
-    }
-    
-    .btn.down {
-        width: 54px;
-        height: 20px;
-        font-size: 12px;
-        border-radius: 5px;
-    }
-    
-    .btn.reset-all {
-        height: 18px;
-        font-size: 9px;
-        padding: 0 10px;
-        border-radius: 5px;
-    }
 }
