@@ -44,12 +44,16 @@
         rightDigitEl.textContent = rightDigit;
     }
 
-    // Increment a digit (wraps from 9 to 0)
+    // Increment a digit (wraps from 9 to 0, with carry-over for right digit)
     function increment(digit) {
         if (digit === 'left') {
             leftDigit = (leftDigit + 1) % 10;
         } else {
-            rightDigit = (rightDigit + 1) % 10;
+            rightDigit++;
+            if (rightDigit > 9) {
+                rightDigit = 0;
+                leftDigit = (leftDigit + 1) % 10;
+            }
         }
         updateDisplay();
         saveState();
