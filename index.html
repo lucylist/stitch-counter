@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Stitch">
+    <title>Stitch Counter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="counters">
+            <div class="counter-group">
+                <div class="digit" id="left-digit" data-digit="left">0</div>
+                <button class="btn down" data-digit="left" data-action="down">-</button>
+            </div>
+            
+            <div class="counter-group">
+                <div class="digit" id="right-digit" data-digit="right">0</div>
+                <button class="btn down" data-digit="right" data-action="down">-</button>
+            </div>
+        </div>
+        
+        <button class="btn reset-all" id="reset-all">Reset</button>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

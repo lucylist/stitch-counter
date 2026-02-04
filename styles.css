@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
+    background: #000;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 170px;
+    padding: 6px;
+    text-align: center;
+}
+
+.counters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.counter-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Large touch targets for digits */
+.digit {
+    font-size: 36px;
+    font-weight: 600;
+    width: 65px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #333333;
+    border-radius: 12px;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.1s, opacity 0.1s;
+}
+
+.digit:active {
+    transform: scale(0.95);
+}
+
+.digit.flash {
+    background: #34c759;
+}
+
+.digit:not(.flash) {
+    transition: background 0.2s ease-out;
+}
+
+.btn {
+    cursor: pointer;
+    font-weight: 500;
+    transition: transform 0.1s, opacity 0.1s;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.btn:active {
+    transform: scale(0.95);
+    opacity: 0.8;
+}
+
+/* Secondary minus buttons - subtle with stroke */
+.btn.down {
+    width: 65px;
+    height: 24px;
+    font-size: 16px;
+    border-radius: 6px;
+    color: #8e8e93;
+    background: #1c1c1e;
+    border: 1px solid #3a3a3c;
+}
+
+.btn.down:active {
+    background: #2c2c2e;
+}
+
+.btn.down.flash {
+    background: #ff3b30;
+    border-color: #ff3b30;
+    color: #fff;
+}
+
+.btn.down:not(.flash) {
+    transition: background 0.2s ease-out, border-color 0.2s ease-out, color 0.2s ease-out;
+}
+
+/* Reset button - small and subtle */
+.btn.reset-all {
+    width: auto;
+    padding: 0 14px;
+    height: 22px;
+    font-size: 11px;
+    background: #1c1c1e;
+    color: #8e8e93;
+    border: 1px solid #3a3a3c;
+    border-radius: 6px;
+}
+
+.btn.reset-all:active {
+    background: #2c2c2e;
+}
+
+/* Apple Watch specific sizing */
+@media (max-width: 180px) {
+    .container {
+        padding: 4px;
+        max-width: 156px;
+    }
+    
+    .counters {
+        gap: 6px;
+        margin-bottom: 5px;
+    }
+    
+    .counter-group {
+        gap: 3px;
+    }
+    
+    .digit {
+        font-size: 32px;
+        width: 58px;
+        height: 54px;
+        border-radius: 10px;
+    }
+    
+    .btn.down {
+        width: 58px;
+        height: 22px;
+        font-size: 14px;
+    }
+    
+    .btn.reset-all {
+        height: 20px;
+        font-size: 10px;
+        padding: 0 12px;
+    }
+}
