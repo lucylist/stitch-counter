@@ -120,15 +120,15 @@ body {
     background: #2c2c2e;
 }
 
-/* Apple Watch specific sizing */
-@media (max-width: 180px) {
+/* Apple Watch sizing (40mm-45mm models: ~162-198px wide) */
+@media (max-width: 220px) {
     .container {
         padding: 4px;
-        max-width: 156px;
+        max-width: 170px;
     }
     
     .counters {
-        gap: 6px;
+        gap: 8px;
         margin-bottom: 5px;
     }
     
@@ -138,20 +138,54 @@ body {
     
     .digit {
         font-size: 32px;
-        width: 58px;
-        height: 54px;
+        width: 60px;
+        height: 56px;
         border-radius: 10px;
     }
     
     .btn.down {
-        width: 58px;
-        height: 22px;
+        width: 60px;
+        height: 24px;
         font-size: 14px;
     }
     
     .btn.reset-all {
-        height: 20px;
-        font-size: 10px;
+        height: 22px;
+        font-size: 11px;
         padding: 0 12px;
+    }
+}
+
+/* Smallest Apple Watch (40mm: ~162px wide) */
+@media (max-width: 170px) {
+    .container {
+        padding: 2px;
+        max-width: 156px;
+    }
+    
+    .counters {
+        gap: 4px;
+        margin-bottom: 4px;
+    }
+    
+    .digit {
+        font-size: 28px;
+        width: 54px;
+        height: 50px;
+        border-radius: 8px;
+    }
+    
+    .btn.down {
+        width: 54px;
+        height: 20px;
+        font-size: 12px;
+        border-radius: 5px;
+    }
+    
+    .btn.reset-all {
+        height: 18px;
+        font-size: 9px;
+        padding: 0 10px;
+        border-radius: 5px;
     }
 }
