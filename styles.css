@@ -62,11 +62,17 @@ body {
     transform: scale(0.95);
 }
 
+/* Green flash for increment */
 .digit.flash {
     background: #34c759;
 }
 
-.digit:not(.flash) {
+/* Red flash for decrement */
+.digit.flash-red {
+    background: #ff3b30;
+}
+
+.digit:not(.flash):not(.flash-red) {
     transition: background 0.2s ease-out;
 }
 
@@ -98,13 +104,14 @@ body {
     background: #2c2c2e;
 }
 
-.btn.down.flash {
+.btn.down.flash,
+.btn.down.flash-red {
     background: #ff3b30;
     border-color: #ff3b30;
     color: #fff;
 }
 
-.btn.down:not(.flash) {
+.btn.down:not(.flash):not(.flash-red) {
     transition: background 0.2s ease-out, border-color 0.2s ease-out, color 0.2s ease-out;
 }
 
@@ -122,4 +129,24 @@ body {
 
 .btn.reset-all:active {
     background: #2c2c2e;
+}
+
+/* Touch device: hide minus buttons and make digits bigger */
+body.touch-device .btn.down {
+    display: none;
+}
+
+body.touch-device .digit {
+    font-size: 24vmin;
+    width: 38vmin;
+    height: 38vmin;
+    border-radius: 5vmin;
+}
+
+body.touch-device .counters {
+    gap: 5vmin;
+}
+
+body.touch-device .container {
+    gap: 4vmin;
 }
