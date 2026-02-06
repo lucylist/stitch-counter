@@ -119,6 +119,13 @@
         touchedDigit = digitEl;
     }
 
+    // Prevent scrolling while swiping on digits
+    function handleTouchMove(e) {
+        if (touchedDigit) {
+            e.preventDefault();
+        }
+    }
+
     // Handle touch end on digits
     function handleTouchEnd(e) {
         if (!touchedDigit) return;
@@ -236,6 +243,7 @@
         document.addEventListener('click', handleClick);
         document.addEventListener('keydown', handleKeydown);
         document.addEventListener('touchstart', handleTouchStart, { passive: true });
+        document.addEventListener('touchmove', handleTouchMove, { passive: false });
         document.addEventListener('touchend', handleTouchEnd);
         resetAllBtn.addEventListener('click', resetAll);
     }
